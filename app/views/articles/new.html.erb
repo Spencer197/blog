@@ -1,33 +1,5 @@
 <h1>New Article</h1>
-<%= form_for :article, url: articles_path do |f| %>
 
-<% if @article.errors.any? %><!--Checks for errors.  If so, shows a list of possible errors.-->
-  <div id="error_explanation">
-    <h2>
-      <%= pluralize(@article.errors.count, "error") %> prohibited
-      this article from being saved:<!--pluralize is a rails helper that takes a number and a string as its arguments. If the number is greater than one, the string will be automatically pluralized.-->
-    </h2>
-    <ul>
-      <% @article.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+<%= render 'form' %><!--This method calls the 'form' partial, which renders the view.-->
 
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
-
-  <p>
-    <%= f.label :text %><br>
-    <%= f.text_area :text %>
-  </p>
-
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
-
-<%= link_to 'Back', articles_path %><!--This link at the bottom of the new article form, sends user back to the index.-->
+<%= link_to 'Back', articles_path %><!--This link sends user back to the articles list from the new form.-->

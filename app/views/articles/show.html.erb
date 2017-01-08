@@ -7,5 +7,5 @@
   <strong>Text:</strong>
   <%= @article.text %>
 </p>
-
+<%= link_to 'Edit', edit_article_path(@article) %> |<!--Add an "Edit" link to the articles page.-->
 <%= link_to 'Back', articles_path %><!--This link sends user back to the index of articles.-->
