@@ -8,3 +8,11 @@
   <%= comment.body %>
 </p>
 <!--This file is a 'partial' to extract showing all the comments for the article.-->
+<p><!--Add the delete link in the app/views/comments/_comment.html.erb partial.
+    *Clicking this new "Destroy Comment" link will fire off a
+    DELETE/articles/:article_id/comments/:id to our CommentsController, which can then use this to
+    find the comment we want to delete-->
+  <%= link_to 'Destroy Comment', [comment.article, comment],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+</p>
