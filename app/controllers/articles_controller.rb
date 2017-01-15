@@ -1,4 +1,7 @@
 class ArticlesController < ApplicationController
+
+  http_basic_authenticate_with name: "sct", password: "sct", except: [:index, :show]#Adds authentication method for every function except index and show.
+
   def index#Add the corresponding index action for the route inside the ArticlesController.
     @articles = Article.all
   end
