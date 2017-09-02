@@ -41,7 +41,7 @@ def update
   end
 end
 #The new method, update, is used when you want to update a record that already exists, and it accepts a hash containing
-#the attributes that you want to update. As before, if there was an error updating the article we want to show the form back to the user.
+#the attributes that you want to update. As before, if there was an error updating the article we want to show the edit form back to the user.
 #We reuse the article_params method that we defined earlier for the create action.
 
 def destroy#This is a delete method for destroying resources, and this route is mapped to the 'destroy' action inside app/controllers/articles_controller.rb
